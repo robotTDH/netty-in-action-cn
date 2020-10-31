@@ -21,7 +21,7 @@ import java.net.InetSocketAddress;
 public class ChatServer {
     //创建 DefaultChannelGroup，其将保存所有已经连接的 WebSocket Channel
     private final ChannelGroup channelGroup =
-        new DefaultChannelGroup(ImmediateEventExecutor.INSTANCE);
+            new DefaultChannelGroup(ImmediateEventExecutor.INSTANCE);
     private final EventLoopGroup group = new NioEventLoopGroup();
     private Channel channel;
 
@@ -29,8 +29,8 @@ public class ChatServer {
         //引导服务器
         ServerBootstrap bootstrap = new ServerBootstrap();
         bootstrap.group(group)
-             .channel(NioServerSocketChannel.class)
-             .childHandler(createInitializer(channelGroup));
+                .channel(NioServerSocketChannel.class)
+                .childHandler(createInitializer(channelGroup));
         ChannelFuture future = bootstrap.bind(address);
         future.syncUninterruptibly();
         channel = future.channel();
@@ -39,7 +39,7 @@ public class ChatServer {
 
     //创建 ChatServerInitializer
     protected ChannelInitializer<Channel> createInitializer(
-        ChannelGroup group) {
+            ChannelGroup group) {
         return new ChatServerInitializer(group);
     }
 

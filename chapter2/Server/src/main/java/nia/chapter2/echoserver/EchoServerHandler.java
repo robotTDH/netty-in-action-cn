@@ -30,13 +30,12 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
     public void channelReadComplete(ChannelHandlerContext ctx)
             throws Exception {
         //将未决消息冲刷到远程节点，并且关闭该 Channel
-        ctx.writeAndFlush(Unpooled.EMPTY_BUFFER)
-                .addListener(ChannelFutureListener.CLOSE);
+        ctx.writeAndFlush(Unpooled.EMPTY_BUFFER).addListener(ChannelFutureListener.CLOSE);
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx,
-        Throwable cause) {
+                                Throwable cause) {
         //打印异常栈跟踪
         cause.printStackTrace();
         //关闭该Channel

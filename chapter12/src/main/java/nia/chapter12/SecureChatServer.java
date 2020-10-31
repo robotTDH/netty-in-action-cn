@@ -24,7 +24,7 @@ public class SecureChatServer extends ChatServer {
 
     @Override
     protected ChannelInitializer<Channel> createInitializer(
-        ChannelGroup group) {
+            ChannelGroup group) {
         //返回之前创建的 SecureChatServerInitializer 以启用加密
         return new SecureChatServerInitializer(group, context);
     }

@@ -13,13 +13,14 @@ import java.util.concurrent.Executors;
 
 /**
  * 代码清单 4-5 写出到 Channel
- *
+ * <p>
  * 代码清单 4-6 从多个线程使用同一个 Channel
  *
  * @author <a href="mailto:norman.maurer@gmail.com">Norman Maurer</a>
  */
 public class ChannelOperationExamples {
     private static final Channel CHANNEL_FROM_SOMEWHERE = new NioSocketChannel();
+
     /**
      * 代码清单 4-5 写出到 Channel
      */
@@ -61,11 +62,9 @@ public class ChannelOperationExamples {
         };
         //获取到线程池Executor 的引用
         Executor executor = Executors.newCachedThreadPool();
-
         //递交写任务给线程池以便在某个线程中执行
         // write in one thread
         executor.execute(writer);
-
         //递交另一个写任务以便在另一个线程中执行
         // write in another thread
         executor.execute(writer);

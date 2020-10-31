@@ -12,10 +12,10 @@ import io.netty.channel.SimpleChannelInboundHandler;
 @Sharable
 //扩展了SimpleChannelInboundHandler
 public class SimpleDiscardHandler
-    extends SimpleChannelInboundHandler<Object> {
+        extends SimpleChannelInboundHandler<Object> {
     @Override
     public void channelRead0(ChannelHandlerContext ctx,
-        Object msg) {
+                             Object msg) {
         //不需要任何显式的资源释放
         // No need to do anything special
     }

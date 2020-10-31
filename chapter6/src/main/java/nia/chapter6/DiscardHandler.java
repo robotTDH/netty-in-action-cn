@@ -18,6 +18,4 @@ public class DiscardHandler extends ChannelInboundHandlerAdapter {
         //丢弃已接收的消息
         ReferenceCountUtil.release(msg);
     }
-
 }
-

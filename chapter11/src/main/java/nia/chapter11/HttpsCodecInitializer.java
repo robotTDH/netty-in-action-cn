@@ -30,7 +30,6 @@ public class HttpsCodecInitializer extends ChannelInitializer<Channel> {
         SSLEngine engine = context.newEngine(ch.alloc());
         //将 SslHandler 添加到ChannelPipeline 中以使用 HTTPS
         pipeline.addFirst("ssl", new SslHandler(engine));
-
         if (isClient) {
             //如果是客户端，则添加 HttpClientCodec
             pipeline.addLast("codec", new HttpClientCodec());

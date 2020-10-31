@@ -8,7 +8,6 @@
         <version>2.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
     <artifactId>chapter8</artifactId>
     <name>Chapter 8. Bootstrapping</name>
     <description>Bootstrapping clients and servers</description>

@@ -13,7 +13,6 @@ import io.netty.handler.codec.http.HttpResponseEncoder;
  *
  * @author <a href="mailto:norman.maurer@gmail.com">Norman Maurer</a>
  */
-
 public class HttpPipelineInitializer extends ChannelInitializer<Channel> {
     private final boolean client;
 
